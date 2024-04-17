@@ -1,11 +1,11 @@
 import React from "react";
 import {View, Text} from "react-native";
 
-export default function Title(){
+export default function Title(props){
 
     return(
         <View>
-            <Text>Meu primeiro aplicativo!</Text>
+            <Text>{props.title}</Text>
         </View>
     );
 }

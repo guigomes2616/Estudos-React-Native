@@ -1,11 +1,17 @@
 import { StatusBar } from 'expo-status-bar'; //Importação
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Title from './src/Componente/Title';
+import Form from './src/Componente/Form';
 
 export default function App() { //Função
+
   return (
     <View style={styles.container}>
-      <Title></Title>
+
+      <Title title="Meu primeiro Formulário"></Title>
+
+      <Form></Form>
+      
       <StatusBar style="auto" />
     </View>
   );
@@ -14,7 +20,7 @@ export default function App() { //Função
 const styles = StyleSheet.create({ //Estilo
   container: {
     flex: 1,
-    backgroundColor: '#add8E6',
+    backgroundColor: '#add8e6',
     alignItems: 'center',
     justifyContent: 'center',
   },
