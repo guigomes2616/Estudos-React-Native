@@ -8,7 +8,7 @@ export default function App() { //Função
   return (
     <View style={styles.container}>
 
-      <Title title="Meu primeiro Formulário"></Title>
+      <Title title="Meu primeiro formulário"></Title>
 
       <Form></Form>
       
@@ -24,4 +24,5 @@ const styles = StyleSheet.create({ //Estilo
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });

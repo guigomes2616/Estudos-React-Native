@@ -1,6 +1,8 @@
-import {Button, TextInput, View, Text } from "react-native-web";
+import {Button, TextInput, View, Text, TouchableOpacity } from "react-native-web";
 import Resultado from "./Resultado";
 import { useState } from "react";
+import styles from "./style";
+import { Touchable } from "react-native";
 
 export default function Form()
 {
@@ -33,23 +35,33 @@ export default function Form()
     }
 
     return(
-        <View>
-            <View>
-                <Text>Altura:</Text>
+        <View style={styles.formContext}>
+            <View style={styles.form}>
+                <Text style={styles.formLabel}>Altura:</Text>
                 <TextInput 
-                placeholder="1.69" 
+                placeholder="EX: 1.69" 
                 keyboardType="numeric"
                 onChangeText = {setHeight}
-                value={height}></TextInput>
+                value={height}
+                style={styles.formInput} >
+                </TextInput>
 
-                <Text>Peso:</Text>
+                <Text style={styles.formLabel}>Peso:</Text>
                 <TextInput 
-                placeholder="63.5 (KG)" 
+                placeholder="EX: 63.5 (KG)" 
                 keyboardType="numeric"
                 onChangeText = {setWeight}
-                value={weight}></TextInput>
+                value={weight}
+                style={styles.formInput}
+                ></TextInput>
 
-                <Button title={buttonTitle} onPress={() => validarImc()} />
+                <TouchableOpacity
+                    title={buttonTitle}
+                    style={styles.formButton}
+                    onPress={() => validarImc()}
+                >
+                    <Text style = {styles.formButtonText}>{buttonTitle}</Text>
+                </TouchableOpacity>
             </View>
 
             <Resultado mensagem={mensagem} imc={imc}></Resultado>
